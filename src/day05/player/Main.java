@@ -10,7 +10,9 @@ public class Main {
         System.out.println("parking = " + parking);
         System.out.println("insultKing = " + insultKing);
 
-        parking.attack(insultKing);
         insultKing.attack(parking);
+        parking.attack(insultKing);
+        parking.attack(insultKing);
+        parking.attack(insultKing);
     }
 }

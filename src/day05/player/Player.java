@@ -31,6 +31,8 @@ public class Player {
         this.hp -= 3; // this == 나
 
         System.out.printf("%s님이 %s님을 공격했습니다\n", this.nickName, target.nickName);
+        System.out.printf("%s님의 남은 체력: %d\n", this.nickName, this.hp);
+        System.out.printf("%s님의 남은 체력: %d\n", target.nickName, target.hp);
 
 
 
