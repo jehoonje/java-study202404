@@ -14,5 +14,10 @@ public class Main {
         parking.attack(insultKing);
         parking.attack(insultKing);
         parking.attack(insultKing);
+
+
+        Player p1 = new Player();
+        new Player("");
+
     }
 }
