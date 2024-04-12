@@ -11,9 +11,9 @@ public class Player {
 
     // 생성자: 객체가 만들어질 때 초기에 어떤값을 가질지를 정하는 곳
     Player(String nick) {
-        nickName = "nick";
-        level = 1;
-        hp = 50;
+        this.nickName /*필드를 지목*/ = nickName;/* 지역변수 */
+        this.level = 1;
+        this.hp = 50;
 
     }
     // 자바에서는 모든 함수가 비어있어도 this라는 애가 하나씩은 들어있다. 자신을 표기함
