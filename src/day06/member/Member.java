@@ -27,7 +27,9 @@ public class Member {
         this.gender = gender;
         this.age = age;
     }
-
+    public void setPassword(String newPassword) {
+        this.password = newPassword;
+    }
 
     // toString: 객체의 정보를 출력할 수 있음
     public String toString() {
