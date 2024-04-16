@@ -35,6 +35,9 @@ public class MemberController {
                     mv.removeMembers();
                     break;
                 case "6":
+                    mv.recoverMember();
+                    break;
+                case "7":
                     boolean flag = mv.exitProgram();
                     if (flag) return;
             } // end switch

@@ -1,7 +1,8 @@
 package day03;
 
+import day06.member.Member;
+
 import java.util.Arrays;
-import java.util.Stack;
 
 public class MethodQuiz {
 
@@ -106,8 +107,9 @@ public class MethodQuiz {
     }
 
     // foods배열에서 맨 끝데이터를 삭제하는 함수
-    static void pop() {
+    public static Member pop() {
         foods = copy(-1);
+        return null;
     }
 
     static void remove(String deleteTarget) {

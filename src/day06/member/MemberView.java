@@ -2,21 +2,27 @@ package day06.member;
 
 import util.SimpleInput;
 
+import static day03.MethodQuiz.pop;
+import static day06.member.MemberRepository.members;
+import static day06.member.MemberRepository.restoreList;
+
 // 역할: 회원 데이터 관리를 위해 입력 출력을 담당함
 public class MemberView {
 
     // 객체의 협력
     MemberRepository mr;
     SimpleInput si;
+    MemberList ml;
 
     MemberView() {
         this.mr = new MemberRepository();
         this.si = new SimpleInput();
+        this.ml = new MemberList();
     }
 
     void showMembers() {
-        System.out.printf("========= 현재 회원 목록 (총 %d명) ==========\n", MemberRepository.members.length);
-        for (Member m : MemberRepository.members) {
+        System.out.printf("========= 현재 회원 목록 (총 %d명) ==========\n", members.length);
+        for (Member m : members) {
             System.out.println(m);
         }
     }
@@ -51,7 +57,8 @@ public class MemberView {
         System.out.println("* 3. 전체회원 정보 조회하기");
         System.out.println("* 4. 회원 정보 수정하기");
         System.out.println("* 5. 회원 정보 삭제하기");
-        System.out.println("* 6. 프로그램 종료");
+        System.out.println("* 6. 회원 정보 복구하기");
+        System.out.println("* 7. 프로그램 종료");
         System.out.println("=============================");
 
 
@@ -168,10 +175,11 @@ public class MemberView {
         int memberIndex = Integer.parseInt(inputNumber) - 1;
 
         // 유효한 인덱스인지 확인
-        if (memberIndex >= 0 && memberIndex < mr.members.length) {
+        if (memberIndex >= 0 && memberIndex < members.length) {
             // 해당 인덱스에 해당하는 회원을 찾음
-            Member memberToRemove = mr.members[memberIndex];
-            removeInform(memberIndex);
+            Member removedMember = members[memberIndex];
+            // pop() 메소드를 사용하여 회원을 삭제하고 삭제된 회원을 임시 저장소에 추가
+            addToRestoreList(pop());
 
             // 여기서 해당 회원을 수정할 수 있음
             // 이어서 수정할 정보를 입력받고 수정하는 등의 작업을 수행할 수 있음
@@ -180,14 +188,45 @@ public class MemberView {
         }
     }
 
-    void removeInform(int index) {
-        // 삭제할 회원 이후의 요소를 앞으로 이동시킴
-        for (int i = index; i < mr.members.length - 1; i++) {
-            mr.members[i] = mr.members[i + 1];
+    // 복구된 회원을 임시 저장소에서 제거하는 메소드
+    void recoverMember() {
+        // 복구할 회원의 이메일을 입력받음
+        String inputEmail = si.input("복구할 회원의 이메일을 입력하세요: ");
+
+        // 입력받은 이메일을 가진 회원을 찾음
+        Member recoveredMember = mr.findMemberByEmail(inputEmail);
+
+        // 회원을 찾은 경우
+        if (recoveredMember != null) {
+            // 회원을 회원 목록에 다시 추가
+            mr.addNewMember(recoveredMember);
+            // 복구된 회원을 임시 저장소에서 제거
+            removeFromRestoreList();
+            System.out.println("회원을 성공적으로 복구했습니다.");
+        } else {
+            System.out.println("입력한 이메일을 가진 회원을 찾을 수 없습니다.");
         }
-        // 배열의 마지막 요소를 null로 설정하여 삭제된 것으로 표시
-        mr.members[mr.members.length - 1] = null;
     }
 
+    // 회원을 삭제하고 삭제된 회원을 반환하는 메소드
+    Member removeInform() {
+        // 마지막 회원을 삭제하고 반환
+        Member removedMember = members[members.length - 1];
+        members[members.length - 1] = null;
+        return removedMember;
+    }
+
+    // 삭제된 회원을 임시 저장소에 추가하는 메소드
+    void addToRestoreList(Member removedMember) {
+        ml.push(removedMember); // 코드 추가
+    }
+
+    // 복구된 회원을 임시 저장소에서 제거하는 메소드
+    void removeFromRestoreList() {
+        ml.pop(); // 코드 수정
+    }
 }
+
+
+
 
