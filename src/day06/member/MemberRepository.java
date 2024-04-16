@@ -5,6 +5,7 @@ public class MemberRepository {
 
     // 필드
     static Member[] members;
+    static Member[] restoreList; // 삭제된 회원들이 모일 배열
 
     // 생성자
     MemberRepository() {
