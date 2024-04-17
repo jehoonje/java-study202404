@@ -23,19 +23,20 @@ public class MemberController {
                     mv.inputNewMember();
                     break;
                 case "2":
+                    // 이메일을 입력받아서 회원을 개별조회 해주는 코드
                     mv.getMember();
                     break;
                 case "3":
                     mv.showMembers();
                     break;
                 case "4":
-                    mv.modifyMembers();
+                    mv.updatePassword();
                     break;
                 case "5":
-                    mv.removeMembers();
+                    mv.deleteMember();
                     break;
                 case "6":
-                    mv.recoverMember();
+                    mv.restoreMember();
                     break;
                 case "7":
                     boolean flag = mv.exitProgram();

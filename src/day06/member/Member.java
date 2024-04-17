@@ -1,5 +1,7 @@
 package day06.member;
 
+import util.SimpleInput;
+
 import java.time.LocalDate;
 
 // 역할: 회원 1명의 정보를 가지고 있어야 한다.
@@ -27,13 +29,17 @@ public class Member {
         this.gender = gender;
         this.age = age;
     }
-    public void setPassword(String newPassword) {
-        this.password = newPassword;
-    }
+
 
     // toString: 객체의 정보를 출력할 수 있음
     public String toString() {
         return String.format("# 이름: %s, 이메일: %s, 나이: %d세, 성별: %s, 가입일: %s"
                 , this.memberName, this.email, this.age, this.gender, this.regDate);
     }
+
+    // 회원의 비밀번호를 수정하는 메서드
+    void changePassword(String newPassword) {
+        this.password = newPassword;
+    }
+
 }
