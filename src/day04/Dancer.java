@@ -26,7 +26,7 @@ public class Dancer {
     }
 
     // 춤추는 기능
-    void dance() {
+    public void dance() {
         System.out.printf("%s 댄서가 %s춤을 춥니다. \n", dancerName, genre);
     }
 
@@ -35,7 +35,7 @@ public class Dancer {
     // class를 사용하는 main에서 추가작업없이 바로 이용가능하도록
     // 1. 생성자는 함수의 일종인데 반드시 이름이 클래스 이름과 같아야 한다.
     // 2. 생성자는 리턴값이 없음 따라서 void가 생략됨. 무조건 void라서 안써도되는거임
-    Dancer() {
+    public Dancer() {
         dancerName = "춤꾼";
         crewName = "팝핀크루";
         genre = "케이팝";
