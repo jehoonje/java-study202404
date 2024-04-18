@@ -1,4 +1,4 @@
-package day08.super_.gisa;
+package day08.gisa;
 
 public class  Child extends Parent {
 

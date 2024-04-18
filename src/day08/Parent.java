@@ -1,4 +1,4 @@
-package day08.super_;
+package day08;
 
 public class Parent {
 

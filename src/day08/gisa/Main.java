@@ -1,11 +1,13 @@
-package day08.super_;
+package day08.gisa;
 
 public class Main {
 
     public static void main(String[] args) {
 
+
         Child c = new Child();
-        // c.superMethod();
-        c.childMethod();
+        System.out.println("=====================");
+        c.aaa();
+
     }
 }

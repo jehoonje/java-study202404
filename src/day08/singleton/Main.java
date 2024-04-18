@@ -1,4 +1,4 @@
-package day08.super_.singleton;
+package day08.singleton;
 
 public class Main {
 

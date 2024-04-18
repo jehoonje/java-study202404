@@ -1,4 +1,4 @@
-package day08.super_.static_;
+package day08.static_;
 
 public class Person {
 

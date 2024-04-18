@@ -1,10 +1,8 @@
-package day08.super_.static_;
+package day08.static_;
 
 import util.SimpleInput;
 
-import static day08.super_.static_.Count.m1;
 import static java.lang.System.out;
-import static util.SimpleInput.input;
 import static java.lang.Math.random;
 
 
@@ -12,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        m1();
+        Count.m1();
 
 
 
@@ -50,7 +48,7 @@ public class Main {
 
         double random = random();
 
-        m1();
+        Count.m1();
         out.println("================================");
 
         out.println("국가: " + Person.nation);
