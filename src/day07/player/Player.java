@@ -8,12 +8,18 @@ import java.util.Scanner;
 // 자식은 1개의 부모클래스만을 상속하지만 자바의 모든 클래스의 조상에는 Object 가 있기때문에 Object 는 상속한다.
 public class Player {
 
-    
+
 
     String nickname;
     int level;
     int hp;
     int exp;
+
+    Player (String nickname) {
+        this.nickname = nickname;
+        this.level = 1;
+        this.hp = 50;
+    }
 
 
 
