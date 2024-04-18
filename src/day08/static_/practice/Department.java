@@ -1,9 +1,9 @@
-package day08.super_.static_.practice;
+package day08.static_.practice;
 
 public class Department {
-
-    String departmentName;
-    int studentCount;
+    // 필드 웬만하면 private 으로 두자
+    private String departmentName;
+    private int studentCount;
     static int totalStudents;
 
     public Department(String departmentName, int studentCount) {
@@ -15,7 +15,7 @@ public class Department {
     }
 
     void addStudent(int number) {
-        studentCount += number;
+        this.studentCount += number;
     }
 
     public int getStudentCount() {

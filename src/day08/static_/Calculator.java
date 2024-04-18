@@ -1,4 +1,4 @@
-package day08.super_.static_;
+package day08.static_;
 
 public class Calculator {
     // 필드의 경우

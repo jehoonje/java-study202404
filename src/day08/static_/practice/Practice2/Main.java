@@ -1,4 +1,4 @@
-package day08.super_.static_.practice.Practice2;
+package day08.static_.practice.Practice2;
 
 public class Main {
     public static void main(String[] args) {

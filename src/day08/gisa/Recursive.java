@@ -1,4 +1,4 @@
-package day08.super_.gisa;
+package day08.gisa;
 
 class Parent1 {
     int compute(int num) {
