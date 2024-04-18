@@ -15,6 +15,10 @@ class Child1 extends Parent1 {
 }
 
 public class Recursive {
+
+    public static int a;
+
+
     public static void main(String[] args) {
         Child1 cc = new Child1();
         System.out.println(cc.compute(4));
