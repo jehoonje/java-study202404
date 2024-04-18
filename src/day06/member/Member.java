@@ -7,6 +7,7 @@ import java.time.LocalDate;
 // 역할: 회원 1명의 정보를 가지고 있어야 한다.
 public class Member {
 
+    // 필드,  속성
     int id; // 식별번호
     String email;
     String memberName;
