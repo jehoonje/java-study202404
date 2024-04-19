@@ -11,5 +11,16 @@ public class Main {
         w.showStatus();
         m.showStatus();
         h.showStatus();
+
+        System.out.println("===========================");
+
+        m.thunderbolt(w, h, m,
+                new Mage("fewf")
+                , new Mage("fwefea")
+        );
+
+        
+
+
     }
 }

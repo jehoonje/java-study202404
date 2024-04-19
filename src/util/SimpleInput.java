@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 역할: 스캐너 입력을 간소화해주는 객체
 public class SimpleInput {
 
-    private static Scanner sc;
+    public static Scanner sc;
 
     static {
         sc = new Scanner(System.in);
