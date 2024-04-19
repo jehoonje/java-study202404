@@ -1,7 +1,6 @@
 package day09.poly.library;
 
 public class Book {
-    public String email;
     private String title; // 도서명
     private String author; // 저자명
     private String publisher; // 출판사명
