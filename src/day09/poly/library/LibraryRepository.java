@@ -76,6 +76,10 @@ public class LibraryRepository {
             }
         }
         return RentStatus.RENT_FAIL;
+
+    }
+    public BookUser getBookUser() {
+        return user;
     }
 }
 

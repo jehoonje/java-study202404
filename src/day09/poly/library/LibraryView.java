@@ -5,6 +5,7 @@ import day05.StringList;
 
 import static util.SimpleInput.*;
 
+
 // 역할: 도서관리 프로그램에서 입출력을 담당하는 객체
 public class LibraryView {
 
@@ -36,6 +37,15 @@ public class LibraryView {
         }
     }
 
+    // 입력한 회원의 정보를 조회 하는 기능
+    private void showUserInformation() {
+        BookUser user = repository.getBookUser();
+        System.out.println("이름: " + user.getName());
+        System.out.println("나이: " + user.getAge());
+        System.out.println("성별: " + user.getGender());
+        System.out.println("쿠폰: " + user.getCouponCount());
+    }
+
     // 메뉴를 출력하는 기능
     public void showMainScreen() {
         System.out.println("\n============ 도서 메뉴 ==============");
@@ -56,6 +66,7 @@ public class LibraryView {
 
             switch (menuNum) {
                 case "1":
+                    showUserInformation();
                     break;
                 case "2":
                     displayAllBooks();
