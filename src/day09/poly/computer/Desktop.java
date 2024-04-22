@@ -2,7 +2,7 @@ package day09.poly.computer;
 
 public class Desktop {
 
-    // 다형ㅎ성은 객체의 교혼성을 높여주며
+    // 다형성은 객체의 교혼성을 높여주며
     // 객체가 특정 부품객체에 종속되지 않도록 하게 해준다.
 
 
