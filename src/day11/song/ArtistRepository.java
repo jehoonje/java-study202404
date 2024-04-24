@@ -1,7 +1,9 @@
 package day11.song;
 
 import day07.modi.pac1.A;
+import day12.io.FileExample;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -44,6 +46,20 @@ public class ArtistRepository {
         return foundArtist.addSong(songName);
     }
 
+    public static final String SAVE_PATH = FileExample.ROOT_PATH + "/hello/song.sav";
+
+
+    public void save() {
+        try(FileOutputStream fos = new FileOutputStream(SAVE_PATH)) {
+
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(artistMap);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * 가수 이름으로 map에서 해당 가수 정보를 꺼내와서
      * 그 가수 정보 안에 있는 노래리스트를 반환
@@ -54,6 +70,21 @@ public class ArtistRepository {
 
         Artist foundArtist = artistMap.get(artistName);
         return foundArtist.getSongList();
+    }
+
+    public void load() {
+
+        File file = new File(SAVE_PATH);
+        if (file.exists()) {
+            try (FileInputStream fis = new FileInputStream(SAVE_PATH)) {
+
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                this.artistMap = (Map<String, Artist>) ois.readObject();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // 가수 정보 생성

@@ -14,6 +14,10 @@ public class ArtistView {
     // 프로그램 실행
     public static void start() {
 
+
+
+        repository.load();
+
         while (true) {
             System.out.println("\n\n****** 음악 관리 프로그램 ******");
             System.out.printf("# 현재 등록된 가수: %d명\n", repository.count());
@@ -62,12 +66,20 @@ public class ArtistView {
         }
     }
 
+
+
+
+
+
+
     // 1번 메뉴 : 노래 등록에 대한 입출력 처리
     private static void insertProcess() {
 
         System.out.println("\n# 노래 등록을 시작합니다.");
         String artistName = input("- 가수명: ");
         String songName = input("- 노래명: ");
+        // 등록된 내용 세이브파일에 저장하기
+        repository.save();
 
         // 결과 화면 출력
         if (!repository.isRegistered(artistName)) { // 신규 등록인가???
