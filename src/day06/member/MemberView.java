@@ -1,5 +1,6 @@
 package day06.member;
 
+import day09.poly.library.Run;
 import util.SimpleInput;
 
 // 역할: 회원 데이터 관리를 위해 입력 출력을 담당함
@@ -34,20 +35,19 @@ public class MemberView {
 
         String name = si.input("- 이름: ");
         String password = si.input("- 패스워드: ");
-        String gender = si.input("- 성별: ");
+        String gender = si.input("- 성별(M/F): ");
         if (gender.equals("M")) {
             gender = MemberConstants.MALE;
         } else if (gender.equals("F")) {
             gender = MemberConstants.FEMALE;
-        }  // 상수 활용
-
+        }
 
         int age = 0;
         while (true) {
             try {
                 age = Integer.parseInt(si.input("- 나이: "));
                 break;
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("나이는 숫자로 입력하세요!");
             }
         }
@@ -156,6 +156,8 @@ public class MemberView {
 
     // 회원 복구에 관련한 입출력 처리
     public void restoreMember() {
+
+
         String inputEmail = si.input("# 복구하실 회원의 이메일을 입력하세요.\n>> ");
 
         // 이메일이 일치하는 회원이 복구리스트에 있는지 조회
@@ -174,5 +176,9 @@ public class MemberView {
             System.out.println("\n# 해당 회원은 복구대상이 아닙니다.");
         }
 
+    }
+
+    public void load() {
+        mr.loadFile();
     }
 }
