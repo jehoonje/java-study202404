@@ -11,7 +11,7 @@ public class SetExample {
 
         // 중복저장 허용 x, 순서가 없음, 비교적 빠른 저장속도
         Set<String> set = new HashSet<>();
-
+//
         boolean flag1 = set.add("김말이");
         set.add("닭꼬치");
         set.add("단무지");
