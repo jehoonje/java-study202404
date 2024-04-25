@@ -18,8 +18,10 @@ public class Dish {
             this.desc = desc;
         }
 
+
         public String getDesc() {
-            return desc;
+
+            return "";
         }
     }
 
