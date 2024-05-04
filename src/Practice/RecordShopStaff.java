@@ -3,7 +3,7 @@ package Practice;
 public class RecordShopStaff {
 
     private String lp;
-    private int key;
+    private static int key;
     private long money;
     private String djingDeck;
 
@@ -18,9 +18,10 @@ public class RecordShopStaff {
 
     public void setLp(String lp) {this.lp = lp;}
 
-    public int getKey() {return key;}
+    public static int getKey() {return key;}
 
-    public void setKey(int key) {this.key = key;}
+    public static void setKey(int key) {
+        RecordShopStaff.key = key;}
 
     public long getMoney() {return money;}
 
