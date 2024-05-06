@@ -53,6 +53,7 @@ public class RecordShipView extends RecordShopStaff {
 
     public static void shopController2() {
         while (true) {
+            menuView2();
             String menuNum = input("메뉴 번호를 입력해 주세요.\n>> ");
             switch (menuNum) {
                 case "1":
