@@ -23,6 +23,7 @@ public class MemberRepository {
     MemberList members;
     MemberList restoreList;
 
+
     // 생성자
     MemberRepository() {
 //        this.members = new Member[3];

@@ -38,7 +38,7 @@ public class RecordShopStock {
 
     @Override
     public String toString() {
-        return "ReordShopStock{" +
+        return "RecordShopStock{" +
                 "title='" + title + '\'' +
                 ", artist='" + artist + '\'' +
                 ", genre='" + genre + '\'' +
