@@ -21,7 +21,7 @@ public class RecordShipView extends RecordShopStaff {
     public void menuView2() {
         System.out.println("======RECORD======");
         System.out.println("  CHECK LP STOCK  ");
-        System.out.println("     MUSIC ON     ");
+        System.out.println("  ADD FRESH LP    ");
         System.out.println("==================");
     }
 
@@ -66,12 +66,11 @@ public class RecordShipView extends RecordShopStaff {
                     stocks.checkStock();
                     break;
                 case "2":
+                    stocks.addFreshLp();
                     break;
             }
         }
     }
-
-
 
     public static boolean checkKey() {
         // 키가 있는지 확인
